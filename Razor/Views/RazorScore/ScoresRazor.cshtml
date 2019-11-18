@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Razor.Models.Student>
+
+@{
+    ViewBag.Title = "ScoresRazor";
+}
+
+<h2>ScoresRazor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped">
+    <thead><tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Name)@*model改成m*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Chinese)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.English)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Math)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Total)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var m in Model)
+        {
+            var total = m.Math + m.Chinese + m.English;
+        <tr>
+            <td>@Html.DisplayFor(x => m.Id)</td>
+            <td>@Html.DisplayFor(x => m.Name)</td>
+            <!--中文-->
+            @if (m.Chinese < 60)
+            {
+                <td class="poor">@Html.DisplayFor(x => m.Chinese)</td>
+            }
+            else if (m.Chinese > 95)
+            {
+                <td calss="excellent">@Html.DisplayFor(x => m.Chinese)</td>
+            }
+            else
+            {
+                <td>@Html.DisplayFor(x => m.Chinese)</td>
+            }
+            <!--英文-->                 
+            @if (m.English < 60)
+            {
+                <td class="poor">@Html.DisplayFor(x => m.English)</td>
+            }
+            else if (m.English > 95)
+            {
+                <td class="excellent">@Html.DisplayFor(x => m.English)</td>
+            }
+            else
+            {
+                <td>@Html.DisplayFor(x => m.English)</td>
+            }
+            <!--數學-->
+            @if (m.Math < 60)
+            {
+                <td class="poor"></td>
+            }
+            </tr>
+        }
+
+    </tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => m.Name)@*modelItem改成x  item改成*@
+                </td>
+                <td>
+                    @Html.DisplayFor(x => m.Chinese)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => m.English)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => m.Math)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => m.Total)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = m.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = m.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = m.Id })
+                </td>
+            </tr>
+        }
+    
+
+</table>
