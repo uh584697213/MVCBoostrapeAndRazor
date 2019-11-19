@@ -121,14 +121,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialViewController.cs" />
     <Compile Include="Controllers\RazorScoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cards.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\CSS\CSS_for_Card.css" />
+    <Content Include="Assets\CSS\score.css" />
+    <Content Include="Assets\images\DarthMual.jpg" />
+    <Content Include="Assets\images\ElonMusk.jpg" />
+    <Content Include="Assets\images\MarkZuckerberg.jpg" />
+    <Content Include="Assets\images\Merkel.jpg" />
+    <Content Include="Assets\images\Obiwan.jpg" />
+    <Content Include="Assets\images\SteveJobs.jpg" />
+    <Content Include="Assets\images\Vader.jpg" />
+    <Content Include="Assets\images\WhiteTwilek.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -139,6 +151,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Code\MyHelper.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -166,6 +179,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\RazorScore\Scores.cshtml" />
     <Content Include="Views\RazorScore\ScoresRazor.cshtml" />
+    <Content Include="Views\RazorScore\ScroesRazorPure.cshtml" />
+    <Content Include="Views\RazorScore\ScoresRazorHelper.cshtml" />
+    <Content Include="Views\RazorScore\GlobalHtmlHelper.cshtml" />
+    <Content Include="Views\Shared\_SampleCardPartial.cshtml" />
+    <Content Include="Views\PartialView\SimpleCard.cshtml" />
+    <Content Include="Views\PartialView\ManCard.cshtml" />
+    <Content Include="Views\Shared\_CardPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

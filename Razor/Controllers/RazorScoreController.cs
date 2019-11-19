@@ -48,6 +48,37 @@ namespace Razor.Controllers
             }
                 ViewBag.topid = Convert.ToInt32(topid);
                 return View(students);
+        }     
+
+        public ActionResult ScroesRazorPure()
+        {
+            return View(students);
+        }
+
+        public ActionResult ScoresRazorHelper()
+        {
+            return View(students);
+        }
+
+        public ActionResult GlobalHtmlHelper()
+        {
+            int topid = 0;
+            int topscroes = 0;
+
+            foreach (var student in students)
+            {
+                ///計算總分
+                student.Total = student.Chinese + student.English + student.Math;
+
+                if (student.Total > topscroes)
+                {
+                    topscroes = student.Total;
+                    topid = student.Id;
+                }
+
+            }
+            ViewBag.topid = Convert.ToInt32(topid);
+            return View(students);
         }
     }
 }
